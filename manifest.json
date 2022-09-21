@@ -1,6 +1,6 @@
 {
-  "name": "omega-faq",
-  "author": "Zendesk",
+  "name": "omega-zendesk-template",
+  "author": "liuyong",
   "version": "1.0.3",
   "api_version": 2,
   "default_locale": "en-us",
