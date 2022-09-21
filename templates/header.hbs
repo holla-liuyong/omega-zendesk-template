@@ -25,11 +25,11 @@
         <li>{{link 'community'}}</li>
         <li>{{link 'new_request' class='submit-a-request'}}</li>
         {{#unless signed_in}}
-        <li>
+        {{!-- <li>
           {{#link "sign_in" class="sign-in"}}
           {{t 'sign_in'}}
           {{/link}}
-        </li>
+        </li> --}}
         {{/unless}}
       </ul>
     </nav>
@@ -72,7 +72,7 @@
     <nav class="menu-list-mobile" id="user-nav-mobile" aria-expanded="false">
       <ul class="menu-list-mobile-items">
         {{#if signed_in}}
-        <li class="user-avatar-item item">
+        {{!-- <li class="user-avatar-item item">
           {{#my_profile role="menuitem" class="my-profile"}}
           {{user_avatar class="menu-profile-avatar"}}
           <div class="menu-profile-name">
@@ -80,7 +80,7 @@
             <div class="my-profile-tooltip">{{t 'profile'}}</div>
           </div>
           {{/my_profile}}
-        </li>
+        </li> --}}
         <li class="item">{{link "requests" role="menuitem"}}</li>
         <li class="item">{{#link "contributions" role="menuitem"}}{{t "activities"}}{{/link}}</li>
         <li class="item">{{contact_details role="menuitem"}}</li>
