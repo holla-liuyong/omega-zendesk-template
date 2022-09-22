@@ -13,7 +13,7 @@
 <nav class="sub-nav">
   {{breadcrumbs}}
 </nav>
-<div class="container">
+<div class="container custom-section">
   <div class="section-container">
     <section id="main-content" class="section-content">
       <header class="page-header">
@@ -44,7 +44,7 @@
       {{pagination "section.sections"}}
 
       {{#if section.articles}}
-        <ul class="article-list">
+        <ul class="article-list custom-article-list">
           {{#each section.articles}}
             <li class="article-list-item {{#if promoted}} article-promoted{{/if}}">
               {{#if promoted}}

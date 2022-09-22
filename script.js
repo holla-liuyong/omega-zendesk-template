@@ -35,6 +35,8 @@ window.addEventListener('DOMContentLoaded', () => {
   if (location.pathname.split('/').length == 3) {
     document.body.style.background = '#fedb0f'
   }
+  // 设置uid
+  setIdValue()
   // const footer = document.getElementById('custom-footer')
   // footer.style.display = 'none'
   document.getElementById('custom-back').onclick = goOmegaWeb
@@ -71,14 +73,14 @@ saveIdToLocal()
 
 // 获取url后面的uid
 function setIdValue() {
-  const request_anonymous_requester_email = document.getElementById('request_anonymous_requester_email')
-  if (!request_anonymous_requester_email) return
+  const inputUid = document.getElementById('request_custom_fields_5471530682255')
+  if (!inputUid) return
   // const uid = handleQueryString(location.search, 'uid')
   const uid = window.localStorage.getItem('customId')
-  request_anonymous_requester_email.value = uid
-  request_anonymous_requester_email.disabled = 'disabled'
+  inputUid.value = uid
+  inputUid.disabled = 'disabled'
 }
-setIdValue()
+
 // 自定义JS脚本结束
 
 
