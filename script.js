@@ -10,10 +10,9 @@ function goOmegaWeb() {
 window.addEventListener('DOMContentLoaded', () => {
   if (location.pathname.split('/').length == 3) {
     document.body.style.background = '#fedb0f'
-  } else {
-    const footer = document.getElementById('custom-footer')
-    footer.style.display = 'none'
   }
+  // const footer = document.getElementById('custom-footer')
+  // footer.style.display = 'none'
   document.getElementById('custom-back').onclick = goOmegaWeb
   document.getElementById('custom-middle').onclick = goOmegaWeb
 })
