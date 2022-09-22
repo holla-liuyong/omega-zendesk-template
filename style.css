@@ -4126,6 +4126,8 @@ ul {
 
 .request-form textarea {
   min-height: 120px;
+  border: none;
+  border-radius: 20px;
 }
 
 .request-follow-up {
