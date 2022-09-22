@@ -3,8 +3,32 @@
 
 // 自定义JS脚本开始
 function goOmegaWeb() {
-  window.location.href = 'https://omega.app'
+  if (isApp()) {
+    let pathnameList = location.pathname.split('/')
+    let href
+    if (pathnameList.length >= 3) {
+      href = location.origin + '/' + pathnameList[1] + '/' + pathnameList[2]
+    } else {
+      href = location.href
+    }
+    window.location.href = href
+  } else {
+    window.location.href = 'https://omega.app'
+  }
 }
+
+function isAndroid() {
+  if (navigator.userAgent.indexOf('Android') > -1 || navigator.userAgent.indexOf('Adr') > -1) {
+    return true
+  }
+}
+
+function isApp() {
+  if (isAndroid() && window.nativeClient && window.nativeClient.closeBrower) {
+    return true
+  }
+}
+
 
 // 设置首页背景色
 window.addEventListener('DOMContentLoaded', () => {
@@ -15,6 +39,11 @@ window.addEventListener('DOMContentLoaded', () => {
   // footer.style.display = 'none'
   document.getElementById('custom-back').onclick = goOmegaWeb
   document.getElementById('custom-middle').onclick = goOmegaWeb
+
+  const mains = document.getElementsByTagName('main')
+  if (mains.length > 0) {
+    mains[0].style.minHeight = window.innerHeight - 160 + 'px'
+  }
 })
 
 // 解析URL参数
