@@ -2149,6 +2149,10 @@ ul {
   vertical-align: middle;
 }
 
+.article-meta a {
+  color: $link_color;
+}
+
 .article-body a {
   color: $link_color;
   text-decoration: underline;
@@ -2419,7 +2423,7 @@ ul {
 }
 
 .share a {
-  color: lighten($text_color, 20%);
+  color: $brand_color;
 }
 
 .share a:hover {
@@ -2466,16 +2470,8 @@ ul {
 }
 
 .comment-callout a {
-  color: $link_color;
+  color: #4483E1;
   text-decoration: underline;
-}
-
-.comment-callout a:visited {
-  color: $visited_link_color;
-}
-
-.comment-callout a:hover, .comment-callout a:active, .comment-callout a:focus {
-  color: $hover_link_color;
 }
 
 .comment-sorter {
