@@ -4,14 +4,18 @@
 // 自定义JS脚本开始
 function goOmegaWeb() {
   if (isApp()) {
-    let pathnameList = location.pathname.split('/')
-    let href
-    if (pathnameList.length >= 3) {
-      href = location.origin + '/' + pathnameList[1] + '/' + pathnameList[2]
-    } else {
-      href = location.href
+    try {
+      window.nativeClient.closeBrower()
+    } catch (error) {
+      let pathnameList = location.pathname.split('/')
+      let href
+      if (pathnameList.length >= 3) {
+        href = location.origin + '/' + pathnameList[1] + '/' + pathnameList[2]
+      } else {
+        href = location.href
+      }
+      window.location.href = href
     }
-    window.location.href = href
   } else {
     window.location.href = 'https://omega.app'
   }
