@@ -5596,3 +5596,7 @@ html[dir="rtl"] .notification-left-aligned {
 h1 {
   font-size: 40px !important;
 }
+
+.m-b-0 {
+  margin-bottom: 0px !important;
+}
