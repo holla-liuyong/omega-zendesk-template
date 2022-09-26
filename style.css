@@ -1607,7 +1607,7 @@ ul {
 }
 
 .section {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 /* @media (min-width: 768px) {
@@ -2263,6 +2263,7 @@ ul {
   .article-sidebar {
     border: 0;
     /* flex: 0 0 17%; */
+    width: 30%;
     height: auto;
     background-color: #fffef4;
   }
@@ -2458,7 +2459,7 @@ ul {
 }
 
 .comment-callout {
-  color: lighten($text_color, 20%);
+  color: #989898;
   display: inline-block;
   font-size: 13px;
   margin-bottom: 0;
@@ -4221,7 +4222,7 @@ ul {
 }
 
 .meta-data {
-  color: lighten($text_color, 20%);
+  color: #989898;
   font-size: 13px;
 }
 
@@ -5602,4 +5603,12 @@ h1 {
 
 .m-b-0 {
   margin-bottom: 0px !important;
+}
+
+.article-more-questions a {
+  color: #4483E1;
+}
+
+.article-more-questions {
+  margin-top: 24px;
 }
