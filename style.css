@@ -2149,10 +2149,6 @@ ul {
   vertical-align: middle;
 }
 
-.article-meta a {
-  color: #989898;
-}
-
 .article-body a {
   color: $link_color;
   text-decoration: underline;
@@ -5579,6 +5575,13 @@ html[dir="rtl"] .notification-left-aligned {
   }
 }
 
+@media (min-width: 768px) {
+  .custom-collapsible-sidebar .collapsible-sidebar-title {
+    margin-bottom: 22px;
+    display: block;
+  }
+}
+
 .color-170a2e {
   color: #170a2e;
 }
@@ -5607,4 +5610,5 @@ h1 {
 
 .article-more-questions {
   margin-top: 24px;
+  color: #858585;
 }
