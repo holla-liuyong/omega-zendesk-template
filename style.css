@@ -615,6 +615,10 @@ ul {
   border: 1px solid $brand_color;
 }
 
+.custom-container .form-field input:focus, .custom-container .form-field input[type="text"]:focus {
+  border: none !important;
+}
+
 .form-field input[type="checkbox"] {
   width: auto;
 }
@@ -1328,7 +1332,7 @@ ul {
 .search-icon {
   position: relative;
   top: 50%;
-  transform: translateY(-40%);
+  transform: translateY(-36%);
   position: absolute;
   left: 15px;
   z-index: 1;
