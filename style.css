@@ -2150,7 +2150,7 @@ ul {
 }
 
 .article-meta a {
-  color: $link_color;
+  color: #989898;
 }
 
 .article-body a {
@@ -5602,7 +5602,7 @@ h1 {
 }
 
 .article-more-questions a {
-  color: #4483E1;
+  color: #4483E1 !important;
 }
 
 .article-more-questions {
