@@ -5601,8 +5601,10 @@ html[dir="rtl"] .notification-left-aligned {
   font-size: 40px !important;
 }
 
-h1 {
-  font-size: 40px !important;
+@media (min-width: 768px) {
+  .custom-section-tree h1 {
+    font-size: 40px !important;
+  }
 }
 
 .m-b-0 {
