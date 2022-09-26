@@ -37,15 +37,8 @@ window.addEventListener('DOMContentLoaded', () => {
   }
   // 设置uid
   setIdValue()
-  // const footer = document.getElementById('custom-footer')
-  // footer.style.display = 'none'
   document.getElementById('custom-back').onclick = goOmegaWeb
   document.getElementById('custom-middle').onclick = goOmegaWeb
-
-  const mains = document.getElementsByTagName('main')
-  if (mains.length > 0) {
-    mains[0].style.minHeight = window.innerHeight - 160 + 'px'
-  }
 })
 
 // 解析URL参数

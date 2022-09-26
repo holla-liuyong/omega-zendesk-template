@@ -1202,6 +1202,10 @@ ul {
   text-decoration: none;
 }
 
+.breadcrumbs li:last-child a {
+  color: #170a2e;
+}
+
 /***** Search field *****/
 .search-container {
   position: relative;
