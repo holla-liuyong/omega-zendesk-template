@@ -1632,8 +1632,7 @@ ul {
 
 @media (max-width: 768px) {
   .blocks-item-title {
-    font-size: 12px;
-    word-break: break-all;
+    font-size: 14px;
   }
 }
 
@@ -5729,4 +5728,16 @@ html[dir="rtl"] .notification-left-aligned {
 .article-more-questions {
   margin-top: 24px;
   color: #858585;
+}
+
+@media (max-width: 768px) {
+  .custom-home-section .recent-activity-list .recent-activity-item a {
+    margin: 0;
+  }
+  
+  .custom-home-section .recent-activity-list .recent-activity-item .recent-activity-item-meta {
+    border-top: 1px solid #f1f1f1;
+    padding-top: 10px;
+    margin-top: 10px;
+  }
 }
