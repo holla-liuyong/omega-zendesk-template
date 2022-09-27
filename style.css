@@ -3961,9 +3961,25 @@ ul {
   margin-bottom: 40px;
 }
 
+.custom-request-breadcrumbs {
+  width: 100%;
+  padding: 0 5%;
+  box-sizing: border-box;
+  background-color: #f0f0f0;
+  min-height: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.custom-request-breadcrumbs .breadcrumbs {
+  margin: 10px 0;
+}
 @media (min-width: 1024px) {
   .request-breadcrumbs {
     margin-bottom: 60px;
+  }
+  .custom-request-breadcrumbs {
+    min-height: 54px;
   }
 }
 
