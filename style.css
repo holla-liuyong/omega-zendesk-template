@@ -411,6 +411,7 @@ ul {
     height: 30px;
     line-height: 30px;
     padding: 0 10px;
+    width: auto;
   }
 }
 
@@ -766,7 +767,7 @@ ul {
 }
 
 .logo .custom-back .back-text {
-  display: block;
+  display: none;
   font-size: 14px;
   margin: 0 6px;
   color: #fff;
@@ -783,6 +784,9 @@ ul {
   .logo .custom-back {
     height: 30px;
     padding: 0 6px;
+  }
+  .logo .custom-back .back-text {
+    display: block;
   }
   .logo .custom-back .pc-back-text {
     display: none;
