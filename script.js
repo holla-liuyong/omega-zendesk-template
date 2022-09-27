@@ -61,7 +61,7 @@ function handleQueryString(url, name) {
 
 // 保存路径后面的id到本地
 function saveIdToLocal() {
-  const uid = handleQueryString(location.search, 'uid')
+  const uid = handleQueryString(location.search, 'id')
   if (uid) {
     window.localStorage.setItem('customId', uid)
   }
