@@ -71,11 +71,11 @@ saveIdToLocal()
 // 获取url后面的uid
 function setIdValue() {
   const inputUid = document.getElementById('request_custom_fields_5471530682255')
-  if (!inputUid) return
-  // const uid = handleQueryString(location.search, 'uid')
-  const uid = window.localStorage.getItem('customId')
-  inputUid.value = uid
-  inputUid.disabled = 'disabled'
+  if (inputUid) {
+    const uid = window.localStorage.getItem('customId')
+    inputUid.value = uid
+    inputUid.parentElement.style.display = 'none'
+  }
 }
 
 // 自定义JS脚本结束
