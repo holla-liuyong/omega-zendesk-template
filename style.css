@@ -1856,6 +1856,7 @@ ul {
 @media (min-width: 768px) {
   .recent-activity-item {
     width: 742px;
+    margin-top: 4px;
   }
 }
 
@@ -2036,7 +2037,7 @@ ul {
 
 @media (min-width: 768px) {
   .section-tree-title {
-    font-size: 28px;
+    font-size: 22px;
   }
 }
 
