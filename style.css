@@ -2031,7 +2031,7 @@ ul {
 
 .section-tree-title {
   margin-bottom: 0;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 @media (min-width: 768px) {
@@ -2507,7 +2507,7 @@ ul {
 
 .comment-heading, .recent-articles-title,
 .related-articles-title {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   margin-top: 0;
   font-size: 18px;
   font-weight: 600;
