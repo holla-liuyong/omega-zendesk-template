@@ -938,6 +938,7 @@ ul {
   cursor: pointer;
   display: flex;
   justify-content: flex-end;
+  transform: translateX(10px);
 }
 
 .nav-wrapper-mobile .menu-button-mobile .icon-menu {
@@ -1650,7 +1651,7 @@ ul {
 }
 
 .section {
-  margin-bottom: 14px;
+  margin-bottom: 10px;
 }
 
 /* @media (min-width: 768px) {
@@ -1845,7 +1846,7 @@ ul {
 .recent-activity-item {
   width: 100%;
   height: auto;
-  margin-top: 4px;
+  margin-top: 10px;
   padding: 16px 18px 10px 20px;
   border-radius: 16px;
   background-color: #fff;
@@ -1919,7 +1920,7 @@ ul {
 }
 
 .recent-activity-controls {
-  margin-top: 4px;
+  margin-top: 10px;
   width: 742px;
   height: 36px;
   border-radius: 12px;
@@ -2364,6 +2365,9 @@ ul {
 
 .article-vote {
   margin: 10px 5px;
+  margin-left: 0;
+  margin-right: 5px;
+  margin-bottom: 20px;
   min-width: 90px;
   width: auto;
 }
@@ -2422,9 +2426,13 @@ ul {
   margin-bottom: 16px;
 }
 
+.recent-articles {
+  margin-bottom: 20px;
+}
+
 .recent-articles li,
 .related-articles li {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 /***** Attachments *****/
@@ -5512,9 +5520,9 @@ html[dir="rtl"] .notification-left-aligned {
 
 @media (max-width: 768px) {
   .new-requset-custom-main-content .form-field .nesty-input {
-    height: 40px;
-    line-height: 40px;
-    border-radius: 40px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 30px;
     border: none;
     padding: 0 25px 0 22px;
   }
@@ -5540,9 +5548,9 @@ html[dir="rtl"] .notification-left-aligned {
 
 @media (max-width: 768px) {
   .new-requset-custom-main-content .form-field input{
-    height: 40px;
-    line-height: 40px;
-    border-radius: 20px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 30px;
     border: none;
     padding: 0 25px 0 22px;
   }
@@ -5571,9 +5579,9 @@ html[dir="rtl"] .notification-left-aligned {
 
 @media (max-width: 768px) {
   .new-requset-custom-main-content .form-field .upload-dropzone {
-    height: 40px;
-    line-height: 40px;
-    border-radius: 20px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 30px;
     border: none;
     padding: 0 25px 0 22px;
     background: #fff;
@@ -5598,6 +5606,7 @@ html[dir="rtl"] .notification-left-aligned {
 
 @media (max-width: 768px) {
   .new-requset-custom-main-content footer input[type="submit"] {
+    width: 100%;
     height: 40px;
     line-height: 40px;
   }
@@ -5637,7 +5646,7 @@ html[dir="rtl"] .notification-left-aligned {
 
 @media (max-width: 768px) {
   .custom-article-votes {
-    padding: 12px;
+    padding: 24px;
   }
 }
 
