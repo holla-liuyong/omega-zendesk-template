@@ -15,9 +15,6 @@
 </nav>
 <div class="container">
   <div class="article-container" id="article-container">
-
-
-
     <article id="main-content" class="article">
       <header class="article-header custom-article-header">
         <h1 title="{{article.title}}" class="article-title">
@@ -62,9 +59,9 @@
           </div>
         </div>
 
-        {{#if settings.show_follow_article}}
+        {{!-- {{#if settings.show_follow_article}}
         <div class="article-subscribe custom-button">{{subscribe}}</div>
-        {{/if}}
+        {{/if}} --}}
       </header>
 
       <section class="article-info">
@@ -112,7 +109,25 @@
       <footer>
         <div class="article-footer">
           {{#if settings.show_article_sharing}}
-          <div class="article-share">{{share}}</div>
+          {{!-- <div class="article-share">{{share}}</div> --}}
+          <div class="article-footer">
+          
+            <div class="article-share">
+              <ul class="share">
+                <li>
+                  <a href="https://www.facebook.com/omegleofficial?title=Suggestion%2FIdeas&amp;u=https%3A%2F%2Fomega4524.zendesk.com%2Fhc%2Fen-gb%2Farticles%2F6806083998621-Suggestion-Ideas"
+                    class="share-facebook" aria-label="Facebook">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12"
+                      aria-label="Share this page on Facebook">
+                      <path fill="currentColor"
+                        d="M6 0a6 6 0 01.813 11.945V7.63h1.552l.244-1.585H6.812v-.867c0-.658.214-1.242.827-1.242h.985V2.55c-.173-.024-.538-.075-1.23-.075-1.444 0-2.29.767-2.29 2.513v1.055H3.618v1.585h1.484v4.304A6.001 6.001 0 016 0z">
+                      </path>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
           {{/if}}
           {{#if settings.show_article_comments}}
           {{#if comments}}
@@ -167,7 +182,7 @@
         {{/if}}
       </div>
       {{#if settings.show_article_comments}}
-      <div class="article-comments" id="article-comments">
+      {{!-- <div class="article-comments" id="article-comments">
         <section class="comments">
           <header class="comment-overview custom-comment-overview">
             <h2 class="comment-heading font-24">
@@ -330,7 +345,7 @@
 
           <p class="comment-callout">{{comment_callout}}</p>
         </section>
-      </div>
+      </div> --}}
       {{/if}}
     </article>
     <aside class="article-sidebar custom-article-sidebar" aria-labelledby="section-articles-title">

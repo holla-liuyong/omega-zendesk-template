@@ -664,12 +664,12 @@ ul {
 }
 
 .form-field .optional {
-  color: lighten($text_color, 20%);
+  color: #170a2e;
   margin-left: 4px;
 }
 
 .form-field p {
-  color: lighten($text_color, 20%);
+  color: #170a2e;
   font-size: 12px;
   margin: 5px 0;
 }
@@ -936,6 +936,8 @@ ul {
   width: auto;
   min-width: 71px;
   cursor: pointer;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .nav-wrapper-mobile .menu-button-mobile .icon-menu {
@@ -1398,6 +1400,7 @@ ul {
 @media (max-width: 768px) {
   .hero {
   	height: 160px;
+    background-image: url(https://img.cacheserv.com/web/omega/faq/mobile-bg-1.png);
   }
 }
 
@@ -1633,6 +1636,8 @@ ul {
 @media (max-width: 768px) {
   .blocks-item-title {
     font-size: 14px;
+    padding: 10px;
+    line-height: 1.2;
   }
 }
 
@@ -1962,6 +1967,15 @@ ul {
   color: $brand_color;
   width: 16px;
   height: 16px;
+}
+
+@media (max-width: 768px) {
+  .recent-activity-comment-icon svg {
+    vertical-align: middle;
+    color: #3e3f41;
+    width: 14px;
+    height: 12px;
+  }
 }
 
 .recent-activity-comment-icon:after {
@@ -2443,7 +2457,7 @@ ul {
 }
 
 .upload-dropzone span {
-  color: lighten($text_color, 20%);
+  color: #858585;
 }
 
 /***** Social share links *****/
@@ -2608,6 +2622,11 @@ ul {
 
 .comment-container {
   width: 100%;
+}
+
+.comment-container textarea {
+  border: none;
+  border-radius: 30px;
 }
 
 .comment-form-controls {
@@ -5480,7 +5499,7 @@ html[dir="rtl"] .notification-left-aligned {
   font-size: 14px;
   font-weight: bold;
   color: #170a2e;
-  margin: 18px 0 ;
+  margin: 8px 0 ;
 }
 
 .new-requset-custom-main-content .form-field .nesty-input {
@@ -5529,7 +5548,7 @@ html[dir="rtl"] .notification-left-aligned {
   }
 }
 
-.new-requset-custom-main-content .form-field #hc-wysiwyg{
+#hc-wysiwyg{
   border-radius: 20px;
   border: none;
 }
@@ -5702,7 +5721,11 @@ html[dir="rtl"] .notification-left-aligned {
 .custom-section .custom-article-list {
   border-radius: 27px;
   background-color: #fff;
-  padding: 4px 24px;
+  padding: 0px 24px;
+  min-height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 @media (min-width: 768px) {
@@ -5722,7 +5745,7 @@ html[dir="rtl"] .notification-left-aligned {
 }
 
 .article-more-questions a {
-  color: #4483E1 !important;
+  color: #4483E1 !important; 
 }
 
 .article-more-questions {
@@ -5740,4 +5763,10 @@ html[dir="rtl"] .notification-left-aligned {
     padding-top: 10px;
     margin-top: 10px;
   }
+}
+
+.custom-menu {
+  width: 30px;
+  height: 30px;
+  margin-left: 10px;
 }
