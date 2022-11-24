@@ -3,20 +3,29 @@
 
 // 自定义JS脚本开始
 function goOmegaWeb() {
-  if (isApp()) {
-    try {
-      window.nativeClient.closeBrower()
-    } catch (error) {
-      let pathnameList = location.pathname.split('/')
-      let href
-      if (pathnameList.length >= 3) {
-        href = location.origin + '/' + pathnameList[1] + '/' + pathnameList[2]
-      } else {
-        href = location.href
-      }
-      window.location.href = href
+  try {
+    const isBack = handleQueryString(location.search, 'isBack') || 0
+    if (isBack) {
+      history.back()
+      return
     }
-  } else {
+    if (isApp()) {
+      try {
+        window.nativeClient.closeBrower()
+      } catch (error) {
+        let pathnameList = location.pathname.split('/')
+        let href
+        if (pathnameList.length >= 3) {
+          href = location.origin + '/' + pathnameList[1] + '/' + pathnameList[2]
+        } else {
+          href = location.href
+        }
+        window.location.href = href
+      }
+    } else {
+      window.location.href = 'https://omega.app'
+    }
+  } catch (error) {
     window.location.href = 'https://omega.app'
   }
 }
@@ -100,7 +109,7 @@ let searchFormSelector = "form[role='search']";
 // Clear the search input, and then return focus to it
 function clearSearchInput(event) {
   event.target.closest(searchFormSelector).classList.remove(searchFormFilledClassName);
-  
+
   let input;
   if (event.target.tagName === "INPUT") {
     input = event.target;
@@ -153,12 +162,12 @@ function appendClearSearchButton(input, form) {
 // Add a class to the search form when the input has a value;
 // Remove that class from the search form when the input doesn't have a value.
 // Do this on a delay, rather than on every keystroke. 
-const toggleClearSearchButtonAvailability = debounce(function(event) {
+const toggleClearSearchButtonAvailability = debounce(function (event) {
   const form = event.target.closest(searchFormSelector);
   form.classList.toggle(searchFormFilledClassName, event.target.value.length > 0);
 }, 200)
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   // Key map
   var ENTER = 13;
   var ESCAPE = 27;
@@ -167,7 +176,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var DOWN = 40;
   var TAB = 9;
 
-  function closest (element, selector) {
+  function closest(element, selector) {
     if (Element.prototype.closest) {
       return element.closest(selector);
     }
@@ -192,8 +201,8 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // social share popups
-  Array.prototype.forEach.call(document.querySelectorAll('.share a'), function(anchor) {
-    anchor.addEventListener('click', function(e) {
+  Array.prototype.forEach.call(document.querySelectorAll('.share a'), function (anchor) {
+    anchor.addEventListener('click', function (e) {
       e.preventDefault();
       window.open(this.href, '', 'height = 500, width = 500');
     });
@@ -232,9 +241,9 @@ document.addEventListener('DOMContentLoaded', function() {
     requestCommentSubmit = document.querySelector('.request-container .comment-container .request-submit-comment');
 
   if (showRequestCommentContainerTrigger) {
-    showRequestCommentContainerTrigger.addEventListener('click', function() {
+    showRequestCommentContainerTrigger.addEventListener('click', function () {
       showRequestCommentContainerTrigger.style.display = 'none';
-      Array.prototype.forEach.call(requestCommentFields, function(e) { e.style.display = 'block'; });
+      Array.prototype.forEach.call(requestCommentFields, function (e) { e.style.display = 'block'; });
       requestCommentSubmit.style.display = 'inline-block';
 
       if (commentContainerTextarea) {
@@ -249,7 +258,7 @@ document.addEventListener('DOMContentLoaded', function() {
     requestCommentSubmitButton = document.querySelector('.request-container .comment-container input[type=submit]');
 
   if (requestMarkAsSolvedButton) {
-    requestMarkAsSolvedButton.addEventListener('click', function() {
+    requestMarkAsSolvedButton.addEventListener('click', function () {
       requestMarkAsSolvedCheckbox.setAttribute('checked', true);
       requestCommentSubmitButton.disabled = true;
       this.setAttribute('data-disabled', true);
@@ -276,7 +285,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var isEmpty = usesWysiwyg ? isEmptyHtml : isEmptyPlaintext;
 
   if (requestCommentTextarea) {
-    requestCommentTextarea.addEventListener('input', function() {
+    requestCommentTextarea.addEventListener('input', function () {
       if (isEmpty(requestCommentTextarea.value)) {
         if (requestMarkAsSolvedButton) {
           requestMarkAsSolvedButton.innerText = requestMarkAsSolvedButton.getAttribute('data-solve-translation');
@@ -297,8 +306,8 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // Submit requests filter form on status or organization change in the request list page
-  Array.prototype.forEach.call(document.querySelectorAll('#request-status-select, #request-organization-select'), function(el) {
-    el.addEventListener('change', function(e) {
+  Array.prototype.forEach.call(document.querySelectorAll('#request-status-select, #request-organization-select'), function (el) {
+    el.addEventListener('change', function (e) {
       e.stopPropagation();
       saveFocus();
       closest(this, 'form').submit();
@@ -307,7 +316,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Submit requests filter form on search in the request list page
   var quickSearch = document.querySelector('#quick-search');
-  quickSearch && quickSearch.addEventListener('keyup', function(e) {
+  quickSearch && quickSearch.addEventListener('keyup', function (e) {
     if (e.keyCode === ENTER) {
       e.stopPropagation();
       saveFocus();
@@ -330,13 +339,13 @@ document.addEventListener('DOMContentLoaded', function() {
   var menuButton = document.querySelector('.header .menu-button-mobile');
   var menuList = document.querySelector('#user-nav-mobile');
 
-  menuButton.addEventListener('click', function(e) {
+  menuButton.addEventListener('click', function (e) {
     e.stopPropagation();
     toggleNavigation(this, menuList);
   });
 
 
-  menuList.addEventListener('keyup', function(e) {
+  menuList.addEventListener('keyup', function (e) {
     if (e.keyCode === ESCAPE) {
       e.stopPropagation();
       closeNavigation(menuButton, this);
@@ -346,14 +355,14 @@ document.addEventListener('DOMContentLoaded', function() {
   // Toggles expanded aria to collapsible elements
   var collapsible = document.querySelectorAll('.collapsible-nav, .collapsible-sidebar');
 
-  Array.prototype.forEach.call(collapsible, function(el) {
+  Array.prototype.forEach.call(collapsible, function (el) {
     var toggle = el.querySelector('.collapsible-nav-toggle, .collapsible-sidebar-toggle');
 
-    el.addEventListener('click', function(e) {
+    el.addEventListener('click', function (e) {
       toggleNavigation(toggle, this);
     });
 
-    el.addEventListener('keyup', function(e) {
+    el.addEventListener('keyup', function (e) {
       if (e.keyCode === ESCAPE) {
         closeNavigation(toggle, this);
       }
@@ -364,21 +373,21 @@ document.addEventListener('DOMContentLoaded', function() {
   var requestOrganisationSelect = document.querySelector('#request-organization select');
 
   if (requestOrganisationSelect) {
-    requestOrganisationSelect.addEventListener('change', function() {
+    requestOrganisationSelect.addEventListener('change', function () {
       closest(this, 'form').submit();
     });
   }
 
   // If multibrand search has more than 5 help centers or categories collapse the list
   var multibrandFilterLists = document.querySelectorAll(".multibrand-filter-list");
-  Array.prototype.forEach.call(multibrandFilterLists, function(filter) {
+  Array.prototype.forEach.call(multibrandFilterLists, function (filter) {
     if (filter.children.length > 6) {
       // Display the show more button
       var trigger = filter.querySelector(".see-all-filters");
       trigger.setAttribute("aria-hidden", false);
 
       // Add event handler for click
-      trigger.addEventListener("click", function(e) {
+      trigger.addEventListener("click", function (e) {
         e.stopPropagation();
         trigger.parentNode.removeChild(trigger);
         filter.classList.remove("multibrand-filter-list--collapsed")
@@ -397,7 +406,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // Dropdowns
-  
+
   function Dropdown(toggle, menu) {
     this.toggle = toggle;
     this.menu = menu;
@@ -422,21 +431,21 @@ document.addEventListener('DOMContentLoaded', function() {
       return Array.prototype.slice.call(this.menu.querySelectorAll("[role='menuitem']"));
     },
 
-    dismiss: function() {
+    dismiss: function () {
       if (!this.isExpanded) return;
 
       this.menu.setAttribute("aria-expanded", false);
       this.menu.classList.remove("dropdown-menu-end", "dropdown-menu-top");
     },
 
-    open: function() {
+    open: function () {
       if (this.isExpanded) return;
 
       this.menu.setAttribute("aria-expanded", true);
       this.handleOverflow();
     },
 
-    handleOverflow: function() {
+    handleOverflow: function () {
       var rect = this.menu.getBoundingClientRect();
 
       var overflow = {
@@ -457,7 +466,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     },
 
-    focusNextMenuItem: function(currentItem) {
+    focusNextMenuItem: function (currentItem) {
       if (!this.menuItems.length) return;
 
       var currentIndex = this.menuItems.indexOf(currentItem);
@@ -466,7 +475,7 @@ document.addEventListener('DOMContentLoaded', function() {
       this.menuItems[nextIndex].focus();
     },
 
-    focusPreviousMenuItem: function(currentItem) {
+    focusPreviousMenuItem: function (currentItem) {
       if (!this.menuItems.length) return;
 
       var currentIndex = this.menuItems.indexOf(currentItem);
@@ -475,7 +484,7 @@ document.addEventListener('DOMContentLoaded', function() {
       this.menuItems[previousIndex].focus();
     },
 
-    clickHandler: function() {
+    clickHandler: function () {
       if (this.isExpanded) {
         this.dismiss();
       } else {
@@ -483,7 +492,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     },
 
-    toggleKeyHandler: function(e) {
+    toggleKeyHandler: function (e) {
       switch (e.keyCode) {
         case ENTER:
         case SPACE:
@@ -504,7 +513,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     },
 
-    menuKeyHandler: function(e) {
+    menuKeyHandler: function (e) {
       var firstItem = this.menuItems[0];
       var lastItem = this.menuItems[this.menuItems.length - 1];
       var currentElement = e.target;
@@ -549,15 +558,15 @@ document.addEventListener('DOMContentLoaded', function() {
   var dropdowns = [];
   var dropdownToggles = Array.prototype.slice.call(document.querySelectorAll(".dropdown-toggle"));
 
-  dropdownToggles.forEach(function(toggle) {
+  dropdownToggles.forEach(function (toggle) {
     var menu = toggle.nextElementSibling;
     if (menu && menu.classList.contains("dropdown-menu")) {
       dropdowns.push(new Dropdown(toggle, menu));
     }
   });
 
-  document.addEventListener("click", function(evt) {
-    dropdowns.forEach(function(dropdown) {
+  document.addEventListener("click", function (evt) {
+    dropdowns.forEach(function (dropdown) {
       if (!dropdown.toggle.contains(evt.target)) {
         dropdown.dismiss();
       }
