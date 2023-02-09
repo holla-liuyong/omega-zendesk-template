@@ -24,7 +24,7 @@ function goOmegaWeb() {
         // window.location.href = href
       }
     } else {
-      window.location.href = 'https://omega.app'
+      history.back()
     }
   } catch (error) {
     window.location.href = 'https://omega.app'
