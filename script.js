@@ -13,14 +13,15 @@ function goOmegaWeb() {
       try {
         window.nativeClient.closeBrower()
       } catch (error) {
-        let pathnameList = location.pathname.split('/')
-        let href
-        if (pathnameList.length >= 3) {
-          href = location.origin + '/' + pathnameList[1] + '/' + pathnameList[2]
-        } else {
-          href = location.href
-        }
-        window.location.href = href
+        history.back()
+        // let pathnameList = location.pathname.split('/')
+        // let href
+        // if (pathnameList.length >= 3) {
+        //   href = location.origin + '/' + pathnameList[1] + '/' + pathnameList[2]
+        // } else {
+        //   href = location.href
+        // }
+        // window.location.href = href
       }
     } else {
       window.location.href = 'https://omega.app'
